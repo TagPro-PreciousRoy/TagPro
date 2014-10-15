@@ -50,9 +50,9 @@ Setup:
     - Drag the empty TagProBot.user.js into the window to install.
     - Locate the file on your System(, linux example provided.) Put that "URI+File" and replace with the value in the Uglifyjs arguments option.
 
-  (Close WebStorm)
 
 - WebStorm("TagPro/.idea/watcherTasks.xml")
+  (Close WebStorm)
   - Juicer bin PATH: <option name="program" value="$PROJECT_DIR$/../../.gem/ruby/2.1.0/bin/juicer" />
   - Uglifyjs bin PATH: <option name="program" value="/usr/bin/uglifyjs" />
     -  <option name="arguments" value="TagProBot.user.js --comments all --screw-ie8 true -o /home/xorc/.config/chromium/Default/Extensions/bkicbikhncibkncmhbkgnghlmkenihfp/1.0_0/script.js" /> 
