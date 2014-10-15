@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectTasksOptions">
+    <TaskOptions isEnabled="true">
+      <option name="arguments" value="merge --force --ignore-problems build/make.js -o ../../TagProBot.user.js" />
+      <option name="checkSyntaxErrors" value="true" />
+      <option name="description" value="Combines" />
+      <option name="exitCodeBehavior" value="ERROR" />
+      <option name="fileExtension" value="js" />
+      <option name="immediateSync" value="true" />
+      <option name="name" value="Juicer" />
+      <option name="output" value="$ProjectFileDir$" />
+      <option name="outputFilters">
+        <array />
+      </option>
+      <option name="outputFromStdout" value="false" />
+      <option name="passParentEnvs" value="true" />
+      <option name="program" value="$PROJECT_DIR$/../../.gem/ruby/2.1.0/bin/juicer" />
+      <option name="scopeName" value="Project Files" />
+      <option name="trackOnlyRoot" value="false" />
+      <option name="workingDir" value="$ProjectFileDir$/src/bot" />
+      <envs />
+    </TaskOptions>
+    <TaskOptions isEnabled="true">
+      <option name="arguments" value="TagProBot.user.js --comments all --screw-ie8 true -o /home/xorc/.config/chromium/Default/Extensions/bkicbikhncibkncmhbkgnghlmkenihfp/1.0_0/script.js" />
+      <option name="checkSyntaxErrors" value="true" />
+      <option name="description" value="Compress bot to chrome extension" />
+      <option name="exitCodeBehavior" value="ERROR" />
+      <option name="fileExtension" value="js" />
+      <option name="immediateSync" value="true" />
+      <option name="name" value="UglifyJS" />
+      <option name="output" value="" />
+      <option name="outputFilters">
+        <array />
+      </option>
+      <option name="outputFromStdout" value="false" />
+      <option name="passParentEnvs" value="true" />
+      <option name="program" value="/usr/bin/uglifyjs" />
+      <option name="scopeName" value="Project Files" />
+      <option name="trackOnlyRoot" value="true" />
+      <option name="workingDir" value="$ProjectFileDir$" />
+      <envs />
+    </TaskOptions>
+  </component>
+</project>
+
