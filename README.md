@@ -63,10 +63,10 @@ Currently it merges files as following:
 
 1. It builds 'build/make.js'. (@depend ../main.js, @depend chrome.userScript.js)
 
-  a make.js references which platform.extention.js to use for building a extention. 
+  - a) make.js references which platform.extention.js to use for building a extention. 
       Currently it loads chrome.userScript.js which adds the neccessary information to make a user.js script in chrome.
       (Note: ATM all the settings have to be changed in this file regarding the user.js @'docblock' comments.
-  b Loads the contents of main.js.
+  - b) Loads the contents of main.js.
     
 2. main.js has a reference to which bot to load. and holds a VERSION variable. (@depend CustomBot.js)
 
