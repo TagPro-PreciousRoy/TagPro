@@ -9,6 +9,7 @@ It merges all the files, on every change to one file: /TagProBot.user.js.
 Then it minifies it to the extention directory of chrome.
 
 Requirements:
+===
   - WebStorm [http://www.jetbrains.com/webstorm]
   - Juicer [http://github.com/cjohansen/juicer]
     "Provides the @depends functionality, compiles scripts together."
@@ -17,6 +18,7 @@ Requirements:
   
   
 Project structure:
+===
   - src/bot/
     - build/ "Build files."
       - make.js "Make file denotes which platform.extention.js to use."
@@ -29,43 +31,47 @@ Project structure:
   - TagProBot.user.js "Merged result of build process."
   
   
- Usage:
+Usage:
+===
    Edit your file and reload extension in chrome (I advise: https://github.com/Rob--W/Chrome-Extension-Reloader which adds a shortcut and a button next to greasemonkey to reload extentions.)
 
 
- Setup (Close WebStorm):
+Setup:
+===
   - Change build/make.js and create a build/platform.extention.js if you want something else then a chrome .user.js.
   - Change main.js to update your VERSION and the BOT to use.
   - Change CustomBot.js to make a bot.
   
-   "WebStorm project file: "TagPro/.idea/watcherTasks.xml" provides the arguments for setting up Juicer and UglifyJS."
+"WebStorm project file: "TagPro/.idea/watcherTasks.xml" provides the arguments for setting up Juicer and UglifyJS."
   
-   Chrome: 
-    goto chrome://extensions/, check-[X] Developer Mode, 
+- Chrome: 
+    - goto chrome://extensions/, check-[X] Developer Mode, 
                                click Load unpacked extension...
-    Drag the empty TagProBot.user.js into the window to install.
-    Locate the file on your System(, linux example provided.) Put that "URI+File" and replace with the value in the Uglifyjs arguments option.
+    - Drag the empty TagProBot.user.js into the window to install.
+    - Locate the file on your System(, linux example provided.) Put that "URI+File" and replace with the value in the Uglifyjs arguments option.
 
-   WebStorm:
-     "TagPro/.idea/watcherTasks.xml"
-      - Juicer bin PATH: <option name="program" value="$PROJECT_DIR$/../../.gem/ruby/2.1.0/bin/juicer" />
-      - Uglifyjs bin PATH: <option name="program" value="/usr/bin/uglifyjs" />
-        -  <option name="arguments" value="TagProBot.user.js --comments all --screw-ie8 true -o /home/xorc/.config/chromium/Default/Extensions/bkicbikhncibkncmhbkgnghlmkenihfp/1.0_0/script.js" /> 
+  (Close WebStorm)
+
+- WebStorm("TagPro/.idea/watcherTasks.xml")
+  - Juicer bin PATH: <option name="program" value="$PROJECT_DIR$/../../.gem/ruby/2.1.0/bin/juicer" />
+  - Uglifyjs bin PATH: <option name="program" value="/usr/bin/uglifyjs" />
+    -  <option name="arguments" value="TagProBot.user.js --comments all --screw-ie8 true -o /home/xorc/.config/chromium/Default/Extensions/bkicbikhncibkncmhbkgnghlmkenihfp/1.0_0/script.js" /> 
    
- Behaviour:
-   Currently it merges files as following:
-   1. It builds 'build/make.js'. (@depend ../main.js, @depend chrome.userScript.js)
-      a) make.js references which platform.extention.js to use for building a extention. 
-        Currently it loads chrome.userScript.js which adds the neccessary information to make a user.js script in chrome.
-        (Note: ATM all the settings have to be changed in this file regarding the user.js @'docblock' comments.
-      b) Loads the contents of main.js.
-        
-    2. main.js has a reference to which bot to load. and holds a VERSION variable. (@depend CustomBot.js)
+Behaviour:
+===
+Currently it merges files as following:
+1. It builds 'build/make.js'. (@depend ../main.js, @depend chrome.userScript.js)
+  a) make.js references which platform.extention.js to use for building a extention. 
+      Currently it loads chrome.userScript.js which adds the neccessary information to make a user.js script in chrome.
+      (Note: ATM all the settings have to be changed in this file regarding the user.js @'docblock' comments.
+  b) Loads the contents of main.js.
     
-    3. CustomBot.js whatever you want.
+2. main.js has a reference to which bot to load. and holds a VERSION variable. (@depend CustomBot.js)
 
-    4. Merges it all into one file named: /TagProBot.user.js
-    
-    5. Minifies TagProBot.user.js into the chrome extension script.js in it's chrome extension directory.
+3. CustomBot.js whatever you want.
+
+4. Merges it all into one file named: /TagProBot.user.js
+
+5. Minifies TagProBot.user.js into the chrome extension script.js in it's chrome extension directory.
 
 
